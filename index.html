@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#172b4d" />
+    <title>Niceinte Kada — Vehicle Marketplace Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="store-config.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="demo-strip">VEHICLE MARKETPLACE DEMO · Sample listings only · No real vehicles or payments</div>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Store home">
+        <span class="brand-mark" data-store-mark>n</span>
+        <span class="brand-copy">
+          <span class="brand-name"><span data-store-name>Niceinte Kada</span><span class="brand-period">.</span></span>
+          <span class="brand-caption">PENNENE PAGARAM VANDIYA PRNYICHVNTA KADA</span>
+        </span>
+      </a>
+      <form class="search-form" id="search-form" role="search">
+        <label class="sr-only" for="search-input">Search vehicles</label>
+        <input id="search-input" type="search" placeholder="Search make, model, year, type or location" />
+        <button aria-label="Search" type="submit">⌕</button>
+      </form>
+      <button class="cart-button" id="open-cart" type="button" aria-label="Open cart">
+        <span aria-hidden="true">🛒</span><span class="cart-label">Cart</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </header>
+
+    <nav class="category-nav" aria-label="Shop categories and information">
+      <div class="category-filters" id="category-filters" aria-label="Product categories"></div>
+      <div class="page-links">
+        <a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">FROM THE OPEN ROAD TO OPEN WATER</span>
+          <h1>Find your next<br /><span>great adventure.</span></h1>
+          <p>Explore sample listings for cars, motorcycles, yachts, ships, jets and commercial vehicles.</p>
+          <a class="primary-link" href="#products">Explore vehicles <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-sun"></div>
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="hero-box"><span>GO<br />FAR</span></div>
+          <div class="hero-sparkle sparkle-one">✳</div>
+          <div class="hero-sparkle sparkle-two">✦</div>
+        </div>
+        <div class="hero-tag"><span>✦</span> The world is yours to explore</div>
+      </section>
+
+      <section class="benefits" aria-label="Marketplace information">
+        <div><span class="benefit-icon">⌕</span><span><strong>Search your way</strong><small>Make, model, type and location</small></span></div>
+        <div><span class="benefit-icon">✈</span><span><strong>Six vehicle categories</strong><small>Road, sea and air</small></span></div>
+        <div><span class="benefit-icon">i</span><span><strong>Demo listings</strong><small>Browse safely, no real sales</small></span></div>
+      </section>
+
+      <section class="products-section" id="products">
+        <div class="section-heading">
+          <div><span class="eyebrow">ROAD · SEA · SKY</span><h2>Explore the marketplace</h2></div>
+          <div class="listing-controls">
+            <span class="result-count" id="result-count"></span>
+            <label class="sr-only" for="sort-products">Sort vehicle listings</label>
+            <select id="sort-products" aria-label="Sort vehicle listings">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="newest">Newest year</option>
+            </select>
+          </div>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="empty-state hidden" id="empty-state">
+          <span>⌕</span><h3>No vehicles found</h3><p>Try a different make, model, category or location.</p>
+          <button class="text-button" id="clear-search" type="button">Show all vehicles</button>
+        </div>
+      </section>
+
+      <section class="demo-note">
+        <span class="note-icon">i</span>
+        <p><strong>Sample listings, not a complete worldwide inventory.</strong> This demo catalog is illustrative, not connected to vehicle dealers or live listings. Prices, specifications and availability are examples only. Checkout is simulated with <code>DEMO-OK</code>; no vehicle or train is for sale here and nothing will be charged.</p>
+      </section>
+    </main>
+
+    <footer><a class="footer-brand" href="index.html"><span data-store-name>Niceinte Kada</span><span class="brand-period">.</span></a><span>Made for demo purposes · No real purchases</span></footer>
+
+    <div class="overlay hidden" id="overlay"></div>
+    <aside class="cart-panel" id="cart-panel" aria-labelledby="cart-title" aria-hidden="true">
+      <div class="panel-heading">
+        <div><span class="eyebrow">YOUR GOOD FINDS</span><h2 id="cart-title">Shopping cart <span id="cart-title-count"></span></h2></div>
+        <button class="icon-button" id="close-cart" aria-label="Close cart" type="button">×</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-empty" id="cart-empty"><span>🛍️</span><h3>Your cart is taking a breather</h3><p>Add something lovely to get started.</p></div>
+      <div class="cart-footer hidden" id="cart-footer">
+        <div class="subtotal-row"><span>Subtotal</span><strong id="subtotal"></strong></div>
+        <p class="shipping-note">This demo does not arrange delivery or vehicle transfers.</p>
+        <button class="checkout-button" id="start-checkout" type="button">Continue to checkout <span>→</span></button>
+      </div>
+    </aside>
+
+    <section class="checkout-modal hidden" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button class="icon-button modal-close" id="close-checkout" aria-label="Close checkout" type="button">×</button>
+      <div class="checkout-intro">
+        <span class="eyebrow">SAFE DEMO CHECKOUT</span>
+        <h2 id="checkout-title">Review your demo request.</h2>
+        <p>Enter made-up contact details and use the demo code. This form stays on this device; no seller is contacted.</p>
+      </div>
+      <form id="checkout-form">
+        <fieldset>
+          <legend><span>1</span> Demo contact details</legend>
+          <div class="form-grid">
+            <label class="full-width">Full name<input name="name" autocomplete="name" required placeholder="Demo Shopper" /></label>
+            <label class="full-width">Street address<input name="address" autocomplete="street-address" required placeholder="123 Sample Street" /></label>
+            <label>City<input name="city" autocomplete="address-level2" required placeholder="Your city" /></label>
+            <label>Postal code<input name="postal" autocomplete="postal-code" required placeholder="12345" /></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><span>2</span> Simulated checkout</legend>
+          <div class="payment-safe"><span aria-hidden="true">♧</span><p><strong>No card number needed.</strong> This demo does not collect or process payment details.</p></div>
+          <label class="full-width demo-code-label">Demo payment code
+            <input name="demoCode" required autocomplete="off" placeholder="Enter DEMO-OK" aria-describedby="code-hint" />
+          </label>
+          <small class="field-hint" id="code-hint">Use <code>DEMO-OK</code> to place a simulated order.</small>
+          <p class="form-error hidden" id="form-error" role="alert"></p>
+        </fieldset>
+        <div class="checkout-total"><span>Demo total</span><strong id="checkout-total"></strong></div>
+        <button class="checkout-button place-order" type="submit">Place demo order <span>✓</span></button>
+        <p class="no-charge">🔒 Demo only · No charge will be made</p>
+      </form>
+    </section>
+
+    <section class="success-modal hidden" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="success-title">
+      <div class="success-check" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="29"></circle><path d="m18 33 9 9 19-21"></path></svg>
+      </div>
+      <span class="eyebrow">THAT WAS EASY</span>
+      <h2 id="success-title">Order placed!</h2>
+      <p>Your demo order is confirmed. Nothing was charged, and no order was sent anywhere.</p>
+      <div class="success-reference">DEMO ORDER <strong id="order-reference"></strong></div>
+      <button class="checkout-button" id="continue-shopping" type="button">Back to shopping <span>→</span></button>
+      <button class="sound-button" id="replay-sound" type="button">♫ Replay success sound</button>
+      <p class="sound-error hidden" id="sound-error" role="status" aria-live="polite"></p>
+    </section>
+  </body>
+</html>

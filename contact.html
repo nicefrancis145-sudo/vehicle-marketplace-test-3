@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#172b4d" />
+    <title>Contact Niceinte Kada</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="store-config.js" defer></script>
+    <script src="contact.js" defer></script>
+  </head>
+  <body class="info-page">
+    <div class="demo-strip">DEMO STORE · No real payments · Never enter real card details</div>
+    <header class="info-header">
+      <a class="brand" href="index.html" aria-label="Store home"><span class="brand-mark" data-store-mark>n</span><span class="brand-copy"><span class="brand-name"><span data-store-name>Niceinte Kada</span><span class="brand-period">.</span></span><span class="brand-caption">PENNENE PAGARAM VANDIYA PRNYICHVNTA KADA</span></span></a>
+      <nav class="page-links" aria-label="Main navigation"><a href="about.html">About</a><a href="faq.html">FAQ</a><a class="current-page" href="contact.html">Contact</a><a class="shop-link" href="index.html">Shop</a></nav>
+    </header>
+    <main class="info-main contact-main">
+      <section class="info-hero">
+        <span class="eyebrow">WE'RE HERE TO HELP</span>
+        <h1>Say <span>hello.</span></h1>
+        <p>Questions about the demo? Send a message using the form below.</p>
+      </section>
+      <section class="info-card contact-card">
+        <div class="contact-notice"><strong>Demo contact form</strong><span>Your message is not stored or sent to a server. Configure a support email in <code>store-config.js</code> to open an email draft on your device.</span></div>
+        <form id="contact-form">
+          <label>Your name<input name="name" autocomplete="name" required placeholder="Your name" /></label>
+          <label>Your email<input name="email" type="email" autocomplete="email" required placeholder="you@example.com" /></label>
+          <label>Message<textarea name="message" rows="5" required placeholder="How can we help?"></textarea></label>
+          <button class="checkout-button" type="submit">Prepare email <span>→</span></button>
+          <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <footer><a class="footer-brand" href="index.html"><span data-store-name>Niceinte Kada</span><span class="brand-period">.</span></a><span>Made for demo purposes · No real purchases</span></footer>
+  </body>
+</html>

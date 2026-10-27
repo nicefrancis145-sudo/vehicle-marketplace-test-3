@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#172b4d" />
+    <title>FAQ — Niceinte Kada</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="store-config.js" defer></script>
+  </head>
+  <body class="info-page">
+    <div class="demo-strip">VEHICLE MARKETPLACE DEMO · Sample listings only · No real vehicles or payments</div>
+    <header class="info-header">
+      <a class="brand" href="index.html" aria-label="Store home"><span class="brand-mark" data-store-mark>n</span><span class="brand-copy"><span class="brand-name"><span data-store-name>Niceinte Kada</span><span class="brand-period">.</span></span><span class="brand-caption">PENNENE PAGARAM VANDIYA PRNYICHVNTA KADA</span></span></a>
+      <nav class="page-links" aria-label="Main navigation"><a href="about.html">About</a><a class="current-page" href="faq.html">FAQ</a><a href="contact.html">Contact</a><a class="shop-link" href="index.html">Shop</a></nav>
+    </header>
+    <main class="info-main">
+      <section class="info-hero">
+        <span class="eyebrow">GOOD QUESTIONS</span>
+        <h1>Frequently asked<br /><span>questions.</span></h1>
+        <p>Quick answers about sample vehicle listings, search and simulated checkout.</p>
+      </section>
+      <section class="faq-list" aria-label="Frequently asked questions">
+        <details open>
+          <summary>Are these real vehicles for sale?</summary>
+          <p>No. These are illustrative sample listings. No seller is contacted, vehicles are not verified or available for purchase, and nothing is shipped or transferred.</p>
+        </details>
+        <details>
+          <summary>Does checkout place a real order or charge me?</summary>
+          <p>No. There are no card fields and no payment processor connected. Use the demo code <code>DEMO-OK</code> to see the simulated confirmation.</p>
+        </details>
+        <details>
+          <summary>Can this list every vehicle in the world?</summary>
+          <p>Not as a static sample catalog. Worldwide availability constantly changes. A complete, current marketplace would need reliable inventory feeds, seller participation and listing verification. This demo has examples across six vehicle categories.</p>
+        </details>
+        <details>
+          <summary>How do I search or filter vehicles?</summary>
+          <p>Search by make, model, year, type, specification or location. Use the category buttons to narrow the listings to cars, motorcycles, yachts, jets, ships or commercial vehicles.</p>
+        </details>
+        <details>
+          <summary>How do I change the shop name, prices, or vehicle photos?</summary>
+          <p>Open <code>store-config.js</code> in VS Code. Edit the <code>name</code> and product entries. Put your own vehicle pictures in the <code>images</code> folder, then set an entry's <code>image</code> to its relative path, such as <code>images/my-car.jpg</code>. The names, prices, model matches and specifications here are demo examples, not verified offers.</p>
+        </details>
+        <details>
+          <summary>What sound plays after demo checkout?</summary>
+          <p>The site's order-confirmation sound plays after a successful demo order. Use Replay success sound on the confirmation screen to hear it again.</p>
+        </details>
+        <details>
+          <summary>Does the contact form send messages?</summary>
+          <p>This demo has no server. If you set a support email in <code>store-config.js</code>, the Contact page can open your device's email app with a drafted message.</p>
+        </details>
+      </section>
+      <p class="faq-contact">Still curious? <a href="contact.html">Visit the contact page →</a></p>
+    </main>
+    <footer><a class="footer-brand" href="index.html"><span data-store-name>Niceinte Kada</span><span class="brand-period">.</span></a><span>Made for demo purposes · No real purchases</span></footer>
+  </body>
+</html>
